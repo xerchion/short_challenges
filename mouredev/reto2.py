@@ -10,12 +10,27 @@
 # 0, 1, 1, 2, 3, 5, 8, 13...
 
 
+# v3
+def fibonacci_3():
+    numbers = [0, 1]
+    while len(numbers) < 50:
+        numbers.append(numbers[-1] + numbers[-2])
+    print(",".join(map(str, numbers)))
+
+
+# v2
+def fibonacci_2():
+    numbers = [0, 1]
+    while len(numbers) < 50:
+        numbers.append(numbers[-1] + numbers[-2])
+    for n in numbers:
+        print(n, end="," if numbers.index(n) != numbers.index(numbers[-1]) else "")
+
+
+# v1
 def fibonacci():
     numbers = [0, 1]
     while len(numbers) < 50:
         numbers.append(numbers[-1] + numbers[-2])
     for n in numbers:
         print(n, end=",")
-
-
-fibonacci()
